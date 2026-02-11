@@ -1,6 +1,6 @@
 export function StepCard({ step }) {
   return (
-    <div className="flex flex-col  items-center text-center">
+    <div className="flex flex-col   items-center text-center">
       <span className="flex items-center gap-6 align-middle text-center">
         <h1 className="text-6xl ">#{step.number}</h1>
         <h1 className="text-5xl">{step.title}</h1>
@@ -13,7 +13,9 @@ export function StepCard({ step }) {
 
       <span className="flex gap-2 mb-4 align-middle items-center">
         <p className="text-2xl">Category: </p>
-        <p className="uppercase text-3xl bg-amber-400 px-2 rounded">{step.category}</p>
+        <p className="uppercase text-3xl bg-amber-400 px-2 rounded">
+          {step.category}
+        </p>
       </span>
       <span className="flex gap-3 ">
         <p>Resources </p>
@@ -23,6 +25,7 @@ export function StepCard({ step }) {
           </span>
         ))}
       </span>
+      
     </div>
   );
 }

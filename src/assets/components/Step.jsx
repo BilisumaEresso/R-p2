@@ -10,7 +10,7 @@ export function Step({ steps }) {
   useEffect(() => {
     selectedStep.prerequisites?.map((p) => {
       const s = steps.find((s) => s.id === p);
-
+      window.screenTop;
       setPre((prev) => [...prev, { title: s.title, id: s.id }]);
     });
   }, [selectedStep, steps]);
@@ -38,15 +38,11 @@ export function Step({ steps }) {
         </div>
         {selectedStep && (
           <div className="w-3/5">
-            <StepCard step={selectedStep} />
+            <StepCard className="fixed" step={selectedStep} />
             {pre && (
               <span className="grid grid-cols-3 gap-2 mt-4 justify-between ">
                 {pre.map((p) => (
                   <p
-                    onClick={() => {
-                      setSelectedStep(steps.find((s) => (s.id = p.id)));
-                      setPre([]);
-                    }}
                     className="text-sm cursor-pointer text-white w-fit px-3 bg-blue-500 text-center rounded-2xl"
                     key={p.id}
                   >
