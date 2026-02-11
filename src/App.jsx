@@ -1,13 +1,132 @@
+import { Step } from "./assets/components/Step";
 
+const learningSteps = [
+  {
+    id: 1,
+    number: "01",
+    title: "React Fundamentals",
+    desc: "Learn JSX, components, props, state, and basic hooks",
+    weeksToFinish: 2,
+    category: "foundation",
+    prerequisites: [],
+    resources: ["React Docs", "FreeCodeCamp"],
+  },
+  {
+    id: 2,
+    number: "02",
+    title: "Advanced Hooks & Patterns",
+    desc: "Master useEffect, useContext, custom hooks, and performance optimization",
+    weeksToFinish: 3,
+    category: "core",
+    prerequisites: [1],
+    resources: ["React Patterns", "Advanced React"],
+  },
+  {
+    id: 3,
+    number: "03",
+    title: "State Management",
+    desc: "Learn Redux Toolkit, Context API, and state management best practices",
+    weeksToFinish: 3,
+    category: "core",
+    prerequisites: [1, 2],
+    resources: ["Redux Toolkit", "Zustand"],
+  },
+  {
+    id: 4,
+    number: "04",
+    title: "Routing & Navigation",
+    desc: "Implement React Router v6 with nested routes and authentication flows",
+    weeksToFinish: 2,
+    category: "navigation",
+    prerequisites: [1],
+    resources: ["React Router Docs"],
+  },
+  {
+    id: 5,
+    number: "05",
+    title: "API Integration",
+    desc: "Connect with REST APIs using Axios, handle loading/error states",
+    weeksToFinish: 2,
+    category: "backend",
+    prerequisites: [1, 2],
+    resources: ["Axios", "React Query"],
+  },
+  {
+    id: 6,
+    number: "06",
+    title: "UI Libraries & Styling",
+    desc: "Style with Tailwind CSS, Material-UI, or Styled Components",
+    weeksToFinish: 2,
+    category: "styling",
+    prerequisites: [1],
+    resources: ["Tailwind CSS", "MUI"],
+  },
+  {
+    id: 7,
+    number: "07",
+    title: "Testing",
+    desc: "Write unit and integration tests with Jest and React Testing Library",
+    weeksToFinish: 3,
+    category: "quality",
+    prerequisites: [1, 2],
+    resources: ["Testing Library", "Jest"],
+  },
+  {
+    id: 8,
+    number: "08",
+    title: "Build Tools & Deployment",
+    desc: "Configure Webpack, deploy to Vercel/Netlify, CI/CD pipelines",
+    weeksToFinish: 2,
+    category: "deployment",
+    prerequisites: [1, 4, 5],
+    resources: ["Vercel", "Webpack"],
+  },
+  {
+    id: 9,
+    number: "09",
+    title: "Real Project Portfolio",
+    desc: "Build 3 full-stack projects: E-commerce, Dashboard, Social App",
+    weeksToFinish: 6,
+    category: "portfolio",
+    prerequisites: [1, 2, 3, 4, 5, 6],
+    resources: ["Project Ideas", "GitHub"],
+  },
+  {
+    id: 10,
+    number: "10",
+    title: "Payment Integration",
+    desc: "Implement Stripe/PayPal, subscription models, and payment security",
+    weeksToFinish: 3,
+    category: "payment",
+    prerequisites: [1, 5, 9],
+    resources: ["Stripe Docs", "PayPal API"],
+  },
+  {
+    id: 11,
+    number: "11",
+    title: "Job Ready Skills",
+    desc: "Master Git, code reviews, agile development, and interview prep",
+    weeksToFinish: 4,
+    category: "career",
+    prerequisites: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    resources: ["LeetCode", "System Design"],
+  },
+  {
+    id: 12,
+    number: "12",
+    title: "Job Hunt & Negotiation",
+    desc: "Create resume, network, interview, and negotiate salary offers",
+    weeksToFinish: 4,
+    category: "career",
+    prerequisites: [11],
+    resources: ["LinkedIn", "Salary Negotiation"],
+  },
+];
 
 function App() {
-  
-
-  return (
-    <>
-     
-    </>
-  )
+  return <>
+  <Step steps={learningSteps}/>
+  </>;
 }
 
-export default App
+export default App;
